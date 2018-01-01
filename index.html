@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+ <html ng-app="to-do">
+   <head>
+     <title>AngularJS To-Do</title>
+   </head>
+
+   <body ng-controller="ToDoController as todo">
+     <h1>AngularJS To-Do</h1>
+     <ul id="to-do-list">
+       <li ng-repeat="task in todo.tasks track by $index">{{task}}
+         <button ng-click="todo.deleteTask($index)">Delete</button>
+       </li>
+     </ul>
+     <form ng-submit="todo.createTask()">
+       <input type="text" ng-model="todo.taskName"/>
+       <input type="submit"/>
+     </form>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+     <script src="app.js"></script>
+   </body>
+
+ </html>
