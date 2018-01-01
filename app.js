@@ -3,16 +3,17 @@ angular
    .controller('ToDoController', ToDoController)
 
   function ToDoController() {
-    this.tasks = ['Walk the cat', 'Eat second breakfast', 'Watch Rocky cutscenes on youtube since too tired to workout']
+    var vm = this
+    vm.tasks = ['Walk the cat', 'Eat second breakfast', 'Watch Rocky cutscenes on youtube since too tired to workout']
 
-    this.createTask = () => {
+    vm.createTask = () => {
       if (!this.taskName) return
 
-      this.tasks.push(this.taskName)
-      this.taskName = ''
+      vm.tasks.push(this.taskName)
+      vm.taskName = ''
     }
 
-    this.deleteTask = (index) => {
-      this.tasks.splice(index, 1)
+    vm.deleteTask = (index) => {
+      vm.tasks.splice(index, 1)
     }
   }
